@@ -1,7 +1,7 @@
-    Métodos Geofísicos III (Sísmica)
+Métodos Geofísicos III (Sísmica)
 ===
 
-[Paulo E. Pasquini Marcondes\(mailto:pasquini.petrobras@gmail.com)
+[Paulo E. Pasquini Marcondes](mailto:pasquini.petrobras@gmail.com)
 ---
 
 
