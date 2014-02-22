@@ -1,4 +1,3 @@
-<<<<<<< HEAD
     Métodos Geofísicos III (Sísmica)
 ===
 
@@ -55,9 +54,3 @@
 
     -   Modelagem
     -   Interpretação
-=======
-geofisica_unisantos
-===================
-
-Métodos Geofísicos
->>>>>>> 26a037648c3ac0e55728d13cab006bd496328245
