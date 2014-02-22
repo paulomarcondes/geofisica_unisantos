@@ -1,0 +1,13 @@
+# Arquivos Binários
+*.pdf
+*.jpg
+*.dvi
+
+# Saidas do Latex
+*.log
+*.aux
+*.bbl
+
+# Copias do editor
+*.tex~
+*.swp
