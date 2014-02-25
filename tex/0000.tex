@@ -1,5 +1,4 @@
-\documentclass[a4paper,11pt]{scrbook}
-
+\documentclass[a4paper,12pt]{memoir}
 
 %\usepackage[latin1]{inputenc}
 \usepackage[utf8x]{inputenc}
@@ -8,112 +7,34 @@
 \usepackage{indentfirst}
 \usepackage{yfonts}
 \usepackage[square]{natbib}
-\usepackage{booktabs}
+\usepackage{subfiles} % \subfiles que podem ser compilados individualmente.
+\usepackage{microtype}
+%\usepackage{booktabs} % A classe memoir ja inclui o pacote.
 %\usepackage{pessoal}
 
+% Opcoes da classe memoir
+\chapterstyle{thatcher}
+
 %opening
-\title{M\'etodos Geof\'isicos III (S\'ismica)}
+\title{Fundamentos da Investiga\c{c}\~ao Geof\'isica}
 \author{Paulo E. Pasquini Marcondes \\<pasquini.petrobras@gmail.com>}
+\date{\today}
 
 \begin{document}
 
 \maketitle
-%\tableofcontents
 
-%\begin{abstract}
-%\end{abstract}
+\tableofcontents
 
-\chapter{Princ\'ipios e Limita\c{c}\~oes da Geof\'isica}
+\frontmatter
 
-	\section{Introdu\c{c}\~ao}
-A geof\'isica consiste na investiga\c{c}\~ao indireta do meio f\'isco (a Terra), com o fito entender ou explicar determinados fen\^omenos, desde a Tect\^onica de placas at\'e a forma\c{c}\~ao de depress\~oes nas ruas e avenidas de uma cidade.
-Fazemos isso atrav\'es da medida de certos par\^ametros f\'isicos do meio, como sua densidade, resistividade, constante diel\'etrica, radioatividade, imped\^ancia el\'astica e muitos outros.
-Cada m\'etodo geof\'isico \'e, portanto, controlado pelas leis f\'isicas do princ\'ipio no qual s baseia. Desta forma, n\~ao \'e poss\'ivel dominar, por exemplo, o M\'etodo Eletromagn\'etico sem dominar as Leis de Maxwell\footnote{James Clerk Maxwell, $\star$1831--1879$\dagger$}.
+\mainmatter
+\subfile{tex/00-Principios_geofisica}
+\subfile{tex/01-Principios_sismica}
 
-	\section{A Hist\'oria da Geof\'isica e seu contexto}
-Atualmente, sempre que pensamos em geof\'isica, logo a associamos com a busca por min\'erios, petr\'oleo e com os terremotos.
-A busca por min\'erios \'e muito antiga, recuando na noite dos tempos at\'e o Paleol\'itico.
-Mas o registro cient\'ifico da minera\c{c}\~ao come\c{c}a com \emph{De Re Metallica} (Das Coisas Met\'alicas), publicado por Georgius Agricola, em 1556 \citep{telford_applied_1990}, que se tornou principal refer\^encia por muito anos.
-
-O primeiro passo para a aplica\c{c}\~ao dos m\'etodos geof\'isicos provavelmente foi dado em 1843 quando Von Wrede percebeu que o teodolito magn\'etico de Lamont poderia ser usado na descoberta de corpos minerais magn\'eticos.
-Entretanto, essa id\'eia n\~ao teve aplica\c{c}\~ao pr\'atica antes da publica\c{c}\~ao da obra \emph{On the Examination of Iron Ore Deposits by Magnetic Methods} publicada em 1879 por Robert Thal\'en.
-
-Os avan\c{c}os na geof\'isica, assim como em todas as \'areas tecnol\'ogicas, est\'a profunda e inexoravelemente atrelado \'a ind\'ustria b\'elica.
-Durante a Primeira Guerra Mundial, tentava-se localizar a posi\c{c}\~ao da artilharia inimiga atrav\'es das ondas de choque provocadas pelos disparos.
-Estetosc\'opios era usados pelas equipes de sapadores para localizar as equipes inimigas, durante a fase conhecida como "Guerra de T\'uneis", como pode ser visto no filme "Pelot\~ao de Elite" \citep{sims_2010} (\emph{Beneath Hill 60}, no original em ingl\^es).
-Na Segunda Guerra Mundial, a descoberta do RADAR, usando pulsos de r\'adio permitiu que os bombardeiros ingleses atingissem seus alvos mesmo em noites sem Lua e com tempo encoberto.
-Posteriormente, o RADAR deu origem ao GPR (\emph{Ground Penetrating RADAR} -- RADAR de Penetra\c{c}\~ao no Solo), inicialmente usado na constru\c{c}\~ao de estradas no gelo no norte da Europa e posteriormente aplicado no estudo de \'areas contaminadas e nos estudos de an\'alogos para reservat\'orios de petr\'oleo.
-
-Nos anos 1960, postulou-se que as anomalias magn\'eticas no assoalho oce\^anico, observadas desde os anos 1930, seriam a indica\c{c}\~ao de que os oceanos estavam crescendo \citep{vine_1965}. 
-No ano seguinte, \citeauthor{wilson_1966} publica o artigo que marcaria o in\'icio da Teoria da Tect\^onica de Placas, cujo embri\~ao fora a Teoria da Deriva Continental, de \citet{van_der_gracht_theory_1928}.
-Esta grande revolu\c{c}\~ao cient\'ifica foi motivada pela necessidade de um mapeamento detalhado do assoalho oce\^anico para que os rec\'em lan\c{c}ados submarinos nucleares pudessem permanecer escondidos nas profundezas.
-Esse mapeamento estava sendo feito a partir das anomalias magn\'eticas.
-
-De maneira semelhante, a dissemina\c{c}\~ao da s\'ismica multicanal e da migra\c{c}\~ao s\'ismica forneceram os subs\'idios que levaram a consolida\c{c}\~ao da Estratigrafia de Sequ\^encias, com o trabalho de \citeauthor{mitchum_seismic_1977} e outros naquele ano, imortalizados no famoso \emph{Memoir 26} da AAPG (\emph{American Association of Patroleum Geologists} -- Associa\c{c}\~ao Americana de Ge\'ologos de Petr\'oleo).
-A Estratigrafia de Sequ\^encias estuda a evolu\c{c}\~ao dos sistemas e ambientes deposicionais ao longo to tempo e tem implica\c{c}\~ao para a defini\c{c}\~ao da paleogeografia e paleoclimatologia de uma \'area e ajuda a contar a hist\'oria evolutiva do Planeta, um dos focos da Geologia.
-
-\section{Princ\'ipios F\'{i}sicos da Geof\'{i}sica} 
-	Como o pr\'{o}prio nome implica, a geof\'{i}sica lida com a f\'{i}sica da Terra (e da atmosfera).
-	Recentemente o nome tamb\'{e}m tem sido aplicado ao estudo indireto de outros corpos celestes, contexto no qual \'{e} mais comum vermos refer\^{e}ncia ao princ\'{i}pio f\'{i}sico ou fen\^{o}meno propriamente, como por exemplo na heliosismologia.
-	Toda a geof\'{i}sica \'{e} baseada na exist\^{e}ncia de contrastes.
-	Em outras palavras, a geof\'{i}sica \'{e} incapaz de detectar um objeto, mas apenas as diferen\c{c}as entre ele e os objetos ao redor.
-	Nas palavras de \citeauthor{telford_applied_1990}:
-	\begin{quote}
-	It should be pointed out that geophysical techniques can detect only a discontinuity, that is, where on region differs sufficiently from another in some property.
-	This, however, is a universal limitation, for we cannot perceive that which is homogeneous in nature; we can discern only that which is has some variation in time and/or space.
-	\end{quote}
-	
-	Ent\~{a}o para que um objeto seja detect\'{a}vel, precisamos que haja contraste entre uma de suas propriedades e aquelas do meio circundante.
-	Certas propriedades s\~{a}o percept\'{i}veis sem a necessidade de introduzirmos uma perturba\c{c}\~{a}o no meio.
-	Outras, precisamos da perturba\c{c}\~{a}o para que sejam detect\'{a}veis.
-
-	A primeira distin\c{c}\~{a}o que podemos fazer entre os m\'{e}todos geof\'{i}sicos, portanto, tem a ver com o tipo de fonte que vamos usar.
-	Em outras palavras, posso perceber a propriedade desejada diretamente, ou preciso perturbar o meio?
-
-	Os principais m\'{e}todos e suas respectivas fontes est\~{a}o sumariados nas Tabelas \ref{tab:fontesnat} e \ref{tab:fontesart}.
-
-\begin{table}\centering
-	\caption{M\'{e}todos Geof\'{i}sicos de fonte natural. Modificado de \cite{kearey_pt,telford_applied_1990}.}
-	\begin{tabular}{lrr}
-	\toprule
-	\bfseries{Fonte}&\bfseries{M\'{e}todo}&\bfseries{Propriedade}\\
-%	\cmidrule{c}{1-2}\\% \morecmidrules \cmidrule{c}{3-4}\\
-	Campo Gravitacional&Gravimetria, gradiometria&Densidade\\
-	Campo Magn\'{e}tico&Magnetometria&Susceptibilidade Magn\'{e}tica\\
-	Calor & Geotermia & gradiente t\'{e}rmico\\
-	Correntes Tel\'{u}ricas& Magnetotel\'{u}rico&?\\
-	Radioatividade&M\'{e}todos Radioativos&radioatividade\\
-	Tect\^{o}nica Global&Geod\'{e}sia e Gravimetria&deforma\c{c}\~{a}o da superf\'{i}cie\\
-	\bottomrule
-	\label{tab:fontesnat}
-	\end{tabular}
-\end{table}
-
-
-\begin{table}\centering
-	\caption{M\'{e}todos Geof\'{i}sicos de fonte artificial. Modificado de \cite{kearey_pt,telford_applied_1990}.}
-	\begin{tabular}{lcr}
-	\bfseries{Fonte}&\bfseries{M\'{e}todo}&\bfseries{Propriedade}\\
-\toprule
-%	\cmidrule{c}{1-2}\\% \morecmidrules \cmidrule{c}{3-4}\\
-	Ondas Mec\^{a}nicas&S\'{i}smica&Imped\^{a}ncia El\'{a}stica\\
-	Corrente El\'{e}trica& M\'{e}todos El\'{e}tricos&Resistividade El\'{e}trica\\
-	\bottomrule
-	\label{tab:fontesart}
-	\end{tabular}
-\end{table}
-
-A escolha do m\'{e}todo geof\'{i}sico a empregar numa investiga\c{c}\~{a}o vai depender do conhecimento geol\'{o}gico pr\'{e}vio da \'{a}rea de estudo e do objeto de interesse.
-Por isso, nos prim\'{o}rdios da ind\'{u}stria do petr\'{o}leo era comum a aplica\c{c}\~{a}o do m\'{e}todo gravim\'{e}trico.
-Os exploracionistas de ent\~{a}o buscavam armadilhas formadas pelo dobramento das camadas perme\'{a}veis sobre os domos de sal
-Desta forma, n\~{a}o buscavam diretamente as acumula\c{c}\~{o}es de hidrocarboneto, mas sim as estruturas geol\'{o}gicas que promoveriam a forma\c{c}\~{a}o do dep\'{o}sito.
-Este tipo de racioc\'{i}nio \'{e} comum em toda a investiga\c{c}\~{a}o geof\'{i}sica.
-
-\section{Limita\c{c}\~oes dos M\'etodos Geof\'isicos}
-
-Os m\'etodos geof\'isicos s\~ao m\'etodos de investiga\c{c}\~ao indireta do meio f\'isico. 
-Ou seja,
+\backmatter
 
 \bibliographystyle{agu}
 \bibliography{../bib/unisantos,../bib/uni}
+
 \end{document}
