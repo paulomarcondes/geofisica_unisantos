@@ -8,12 +8,27 @@
 \usepackage{yfonts}
 \usepackage[square]{natbib}
 \usepackage{subfiles} % \subfiles que podem ser compilados individualmente.
-\usepackage{microtype}
+\usepackage[auto]{chappg} % Numeracao de paginas por capitulo.
+\usepackage[labelstoglobalaux]{bibunits} % Bibliografia por capitulos. 
+% A opcao "labelstoglobalaux" gera apenas um arquivo .aux, ao inves dos multiplos.
+\usepackage{microtype} % Ajuste fino da tipografia, automatico
 %\usepackage{booktabs} % A classe memoir ja inclui o pacote.
 %\usepackage{pessoal}
 
 % Opcoes da classe memoir
 \chapterstyle{thatcher}
+% As linhas abaixo aparentemente nao sao necessarias
+%\counterwithin{figure}{chapter}
+%\counterwithin{table}{chapter}
+
+% Opcoes da Classe chappg
+\pagenumbering[Index]{bychapter}
+\renewcommand{\chappgsep}{--}
+
+% Opcoes da classe bibunits
+\bibliographyunit[\chapter]
+\defaultbibliographystyle{agu}
+\defaultbibliography{bib/unisantos,bib/uni}
 
 %opening
 \title{Fundamentos da Investiga\c{c}\~ao Geof\'isica}
@@ -34,7 +49,5 @@
 
 \backmatter
 
-\bibliographystyle{agu}
-\bibliography{../bib/unisantos,../bib/uni}
 
 \end{document}
